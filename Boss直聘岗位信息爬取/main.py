@@ -135,7 +135,8 @@ for idx, job_item in enumerate(job_items[:max_jobs]):
 
         # 返回列表页
         time.sleep(2)
-
+        driver.execute_script("window.scrollBy(0, 1000);")
+        time.sleep(2)  # 等待新内容加载
         # 重新获取职位列表（因为页面刷新了）
         job_items = driver.find_elements(By.CSS_SELECTOR, "li[class*='job']")
 
